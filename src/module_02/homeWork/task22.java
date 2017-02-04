@@ -1,7 +1,7 @@
 package module_02.homeWork;
 
 /**
- * Created by voksus on 30.01.2017.
+ * Created by voksus on 04.02.2017.
  */
 public class task22 {
 
