@@ -44,7 +44,7 @@ public class task21 {
         System.out.println("\tsecondLargestElement.(doubles) : " + secondLargestElement(doubleData));
     }
 
-    // sum(int)
+    // sum from ints                - returns the sum of each element in int array
     private static int sum(int[] intData) {
         int sum = 0;
         for (int currentData : intData) {
@@ -53,7 +53,7 @@ public class task21 {
         return sum;
     }
 
-    // sum(double)
+    // sum from doubles             - returns the sum of each element in double array
     private static double sum(double[] doubleData) {
         double sum = 0;
         for (double currentData : doubleData) {
@@ -62,7 +62,7 @@ public class task21 {
         return sum;
     }
 
-    // min(int)
+    // min from ints                - returns smallest value of elements in int array
     private static int min(int[] intData) {
         int min = intData[0];
         for (int i = 0; i < intData.length - 1; i++) {
@@ -71,7 +71,7 @@ public class task21 {
         return min;
     }
 
-    // min(double)
+    // min from doubles             - returns smallest value of elements in int array
     private static double min(double[] doubleData) {
         double min = doubleData[0];
         for (int i = 0; i < doubleData.length - 1; i++) {
@@ -80,7 +80,7 @@ public class task21 {
         return min;
     }
 
-    // max(int)
+    // max from ints                - returns biggest value of elements in int array
     private static int max(int[] intData) {
         int max = intData[0];
         for (int i = 0; i < intData.length; i++) {
@@ -89,7 +89,7 @@ public class task21 {
         return max;
     }
 
-    // max(double)
+    // max from doubles             - returns biggest value of elements in int array
     private static double max(double[] doubleData) {
         double max = doubleData[0];
         for (int i = 0; i < doubleData.length; i++) {
@@ -98,7 +98,7 @@ public class task21 {
         return max;
     }
 
-    // maxPositive(int)     - NOT SURE the task is correct
+    // max positive from int        - same as max(int) but returns 0 if positive value wasn't found
     private static int maxPositive(int[] intData) {
         int maxFromArray = max(intData);
         if(maxFromArray < 0){
@@ -107,7 +107,7 @@ public class task21 {
         return maxFromArray;
     }
 
-    // maxPositive(double)  - NOT SURE the task is correct
+    // maxPositive(double)          - same as max(double) but returns 0 if positive value wasn't found
     private static double maxPositive(double[] doubleData) {
         double maxFromArray = max(doubleData);
         if(maxFromArray < 0){
@@ -116,7 +116,7 @@ public class task21 {
         return maxFromArray;
     }
 
-    // multiplication(int)
+    // multiplication(int)          - returns the multiply of each element in array of int
     private static int multiplication(int[] intData) {
         int multiplication = intData[0];
         for (int i = 1; i < intData.length; i++) {
@@ -125,7 +125,7 @@ public class task21 {
         return multiplication;
     }
 
-    // multiplication(double)
+    // multiplication(double)       - returns the multiply of each element in array of doubles
     private static double multiplication(double[] doubleData) {
         double multiplication = doubleData[0];
         for (int i = 1; i < doubleData.length; i++) {
@@ -134,7 +134,7 @@ public class task21 {
         return multiplication;
     }
 
-    // modulus(int)
+    // modulus(int)                 - returns array with two int absolute values
     private static int[] modulus(int[] intData) {
         int[] result = new int[2];
         result[0] = Math.abs(intData[0]);
@@ -142,7 +142,7 @@ public class task21 {
         return result;
     }
 
-    // modulus(double)
+    // modulus(double)              - returns array with two double absolute values
     private static double[] modulus(double[] doubleData) {
         double[] result = new double[2];
         result[0] = Math.abs(doubleData[0]);
@@ -150,7 +150,7 @@ public class task21 {
         return result;
     }
 
-    // secondLargestElement(int)
+    // second largest from ints     - returns second biggest value of elements in array of ints
     private static int secondLargestElement(int[] intData) {
         int maxValue = max(intData);
         int beforeMaxValue = Integer.MIN_VALUE;
@@ -162,10 +162,10 @@ public class task21 {
         return beforeMaxValue;
     }
 
-    // secondLargestElement(double)
+    // second largest from doubles  - returns second biggest value of elements in array of doubles
     private static double secondLargestElement(double[] doubleData) {
         double maxValue = max(doubleData);
-        double beforeMaxValue = Integer.MIN_VALUE;
+        double beforeMaxValue = Double.MIN_VALUE;
         for (int i = 0; i < doubleData.length; i++) {
             if(beforeMaxValue < doubleData[i] && doubleData[i] < maxValue){
                 beforeMaxValue = doubleData [i];
