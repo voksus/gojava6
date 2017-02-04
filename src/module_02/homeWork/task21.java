@@ -100,12 +100,20 @@ public class task21 {
 
     // maxPositive(int)     - NOT SURE the task is correct
     private static int maxPositive(int[] intData) {
-        return max(intData);
+        int maxFromArray = max(intData);
+        if(maxFromArray < 0){
+            maxFromArray = 0;
+        }
+        return maxFromArray;
     }
 
     // maxPositive(double)  - NOT SURE the task is correct
     private static double maxPositive(double[] doubleData) {
-        return max(doubleData);
+        double maxFromArray = max(doubleData);
+        if(maxFromArray < 0){
+            maxFromArray = 0;
+        }
+        return maxFromArray;
     }
 
     // multiplication(int)
@@ -144,11 +152,8 @@ public class task21 {
 
     // secondLargestElement(int)
     private static int secondLargestElement(int[] intData) {
-        int maxValue = intData[0];
+        int maxValue = max(intData);
         int beforeMaxValue = Integer.MIN_VALUE;
-        for (int i = 0; i < intData.length; i++) {
-            maxValue = maxValue < intData[i] ? intData [i] : maxValue;
-        }
         for (int i = 0; i < intData.length; i++) {
             if(beforeMaxValue < intData[i] && intData[i] < maxValue){
                 beforeMaxValue = intData [i];
@@ -159,11 +164,8 @@ public class task21 {
 
     // secondLargestElement(double)
     private static double secondLargestElement(double[] doubleData) {
-        double maxValue = doubleData[0];
+        double maxValue = max(doubleData);
         double beforeMaxValue = Integer.MIN_VALUE;
-        for (int i = 0; i < doubleData.length; i++) {
-            maxValue = maxValue < doubleData[i] ? doubleData [i] : maxValue;
-        }
         for (int i = 0; i < doubleData.length; i++) {
             if(beforeMaxValue < doubleData[i] && doubleData[i] < maxValue){
                 beforeMaxValue = doubleData [i];
