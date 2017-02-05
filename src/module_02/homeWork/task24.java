@@ -5,7 +5,7 @@ package module_02.homeWork;
  */
 public class task24 {
 
-    private static int[] balances = {1200, 250, 2000, 500, 3200};
+    private static double[] balances = {1200, 250, 2000, 500, 3200};
     private static String[] ownerNames = {"Jane", "Ann", "Jack", "Oww", "Lane"};
 
     public static void main(String[] args) {
@@ -34,7 +34,7 @@ public class task24 {
         if (ownerIndex >= 0) {
             balances[ownerIndex] += fundAmount;
             result.append(ownerNames[ownerIndex]).append(" ");
-            result.append(Integer.toString(balances[ownerIndex]));
+            result.append(Double.toString(balances[ownerIndex]));
         }
 
         // if owner wasn't found in list "" will be return
