@@ -5,7 +5,7 @@ package module_02.homeWork;
  */
 public class task23 {
 
-    private static int[] balances = {1200, 250, 2000, 500, 3200};
+    private static double[] balances = {1200, 250, 2000, 500, 3200};
     private static String[] ownerNames = {"Jane", "Ann", "Jack", "Oww", "Lane"};
 
     public static void main(String[] args) {
@@ -35,8 +35,8 @@ public class task23 {
         if (ownerIndex >= 0) {
             if (balances[ownerIndex] > 0 && withdrawal > 0 && withdrawal * 1.05 < balances[ownerIndex]) {
                 result.append(ownerNames[ownerIndex]).append(" ");
-                result.append(Integer.toString((int) withdrawal)).append(" ");
-                result.append(Integer.toString(balances[ownerIndex] - (int) (withdrawal * 1.05)));
+                result.append(Double.toString((int) withdrawal)).append(" ");
+                result.append(Double.toString(balances[ownerIndex] - (withdrawal * 1.05)));
             } else {
                 result.append(owner).append(" NO");
             }
