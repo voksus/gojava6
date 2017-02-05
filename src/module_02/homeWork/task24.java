@@ -1,7 +1,7 @@
 package module_02.homeWork;
 
 /**
- * Created by voksus on 30.01.2017
+ * Created by voksus on 05.02.2017
  */
 public class task24 {
 
@@ -11,14 +11,14 @@ public class task24 {
     public static void main(String[] args) {
 
         String ownerName = "Oww";
-        int fundAmount = 100;
+        double fundAmount = 100;
 
         System.out.println(withdraw(ownerName, fundAmount));
 
     }
 
     // method checking owner's balance and trying to fund the money
-    private static String withdraw(String owner, int fundAmount) {
+    private static String withdraw(String owner, double fundAmount) {
         StringBuilder result = new StringBuilder();
         int ownerIndex = -1;
 
