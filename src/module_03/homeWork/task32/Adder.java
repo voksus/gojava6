@@ -1,7 +1,7 @@
 package module_03.homeWork.task32;
 
 /**
- * Created by voksu on 07.02.2017.
+ * Created by voksus on 07.02.2017.
  */
 public class Adder extends Arithmetic {
 
