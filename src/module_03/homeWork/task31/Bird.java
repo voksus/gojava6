@@ -9,14 +9,14 @@ public class Bird {
 
         Bird bird = new Bird();
 
-        bird.sing();
+        bird.sing("I am walking");
+        bird.sing("I am flying");
+        bird.sing("I am singing");
+        bird.sing("I am Bird");
 
     }
 
-    private static void sing() {
-        System.out.println("I am walking");
-        System.out.println("I am flying");
-        System.out.println("I am singing");
-        System.out.println("I am Bird");
+    private static void sing(String lyrics) {
+        System.out.println(lyrics);
     }
 }
