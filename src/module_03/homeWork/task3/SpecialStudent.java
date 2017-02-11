@@ -19,17 +19,9 @@ public class SpecialStudent extends CollegeStudent {
     }
 
     // constr3
-    public SpecialStudent(String firstName, String lastName, int group, Course[] coursesTaken,
-                          int age, String collegeName,
-                          int rating, long id, long secretKey) {
-        super(firstName, lastName, group, coursesTaken, age, collegeName, rating, id);
-        setSecretKey(secretKey);
-    }
-
-    // constr4
     public SpecialStudent(long secretKey) {
         super("", "", 0);
-        setSecretKey(secretKey);
+        this.secretKey = secretKey;
     }
 
     // Getters and Setters
