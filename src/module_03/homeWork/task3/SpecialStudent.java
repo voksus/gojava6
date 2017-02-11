@@ -1,4 +1,4 @@
-package module_03.homeWork.task33;
+package module_03.homeWork.task3;
 
 /**
  * Created by voksus on 07.02.2017.
@@ -23,6 +23,12 @@ public class SpecialStudent extends CollegeStudent {
                           int age, String collegeName,
                           int rating, long id, long secretKey) {
         super(firstName, lastName, group, coursesTaken, age, collegeName, rating, id);
+        setSecretKey(secretKey);
+    }
+
+    // constr4
+    public SpecialStudent(long secretKey) {
+        super("", "", 0);
         setSecretKey(secretKey);
     }
 

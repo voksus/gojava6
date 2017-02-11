@@ -1,4 +1,4 @@
-package module_03.homeWork.task33;
+package module_03.homeWork.task3;
 
 import java.util.Date;
 

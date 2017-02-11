@@ -1,4 +1,4 @@
-package module_03.homeWork.task31;
+package module_03.homeWork.task1;
 
 /**
  * Created by voksus on 07.02.2017.

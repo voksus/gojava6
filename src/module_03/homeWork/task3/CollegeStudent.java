@@ -1,4 +1,4 @@
-package module_03.homeWork.task33;
+package module_03.homeWork.task3;
 
 /**
  * Created by voksus on 07.02.2017.
@@ -23,12 +23,12 @@ public class CollegeStudent extends Student {
     public CollegeStudent(String firstName, String lastName, int group,
                           Course[] coursesTaken, int age,
                           String collegeName, int rating, long id) {
-        super(firstName, lastName, group);
-        super.setCoursesTaken(coursesTaken);
-        super.setAge(age);
-        setCollegeName(collegeName);
-        setRating(rating);
-        setId(id);
+        this(firstName, lastName, group);
+        this.setCoursesTaken(coursesTaken);
+        this.setAge(age);
+        this.collegeName = collegeName;
+        this.rating = rating;
+        this.id = id;
     }
 
     // Getters and Setters

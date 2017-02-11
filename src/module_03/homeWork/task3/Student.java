@@ -1,4 +1,4 @@
-package module_03.homeWork.task33;
+package module_03.homeWork.task3;
 
 /**
  * Created by voksus on 07.02.2017.
@@ -13,15 +13,15 @@ public class Student {
 
     // constr1
     public Student(String firstName, String lastName, int group) {
-        setFirstName(firstName);
-        setLastName(lastName);
-        setGroup(group);
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.group = group;
     }
 
     // constr2
     public Student(String lastName, Course[] coursesTaken) {
-        setLastName(lastName);
-        setCoursesTaken(coursesTaken);
+        this.lastName = lastName;
+        this.coursesTaken = coursesTaken;
     }
 
     // Getters and Setters

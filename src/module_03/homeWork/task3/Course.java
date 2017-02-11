@@ -1,4 +1,4 @@
-package module_03.homeWork.task33;
+package module_03.homeWork.task3;
 
 import java.util.Date;
 
@@ -14,15 +14,15 @@ public class Course {
 
     // constr1
     public Course(Date startDate, String name) {
-        setStartDate(startDate);
-        setName(name);
+        this.startDate = startDate;
+        this.name = name;
     }
 
     // constr2
     public Course(int hoursDuration, String name, String teacherName) {
-        setHoursDuration(hoursDuration);
-        setName(name);
-        setTeacherName(teacherName);
+        this.hoursDuration = hoursDuration;
+        this.name = name;
+        this.teacherName = teacherName;
     }
 
     // Getters and Setters
