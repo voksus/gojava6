@@ -27,9 +27,7 @@ public class Solution {
 
         SpecialStudent specialStudent1 = new SpecialStudent("Ali", "Abu", 103);
         SpecialStudent specialStudent2 = new SpecialStudent("Kolindin", new Course[]{course3});
-        SpecialStudent specialStudent3 = new SpecialStudent("Zhmodya", "Pukin",
-                103, new Course[]{course3, course4, course5}, 37,
-                "KPI", 3, 76542098576L, 12345678900L);
+        SpecialStudent specialStudent3 = new SpecialStudent(12345678900L);
     }
 
 }
