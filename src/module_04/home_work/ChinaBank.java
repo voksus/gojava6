@@ -63,7 +63,9 @@ public class ChinaBank extends Bank {
             return;
         }
 
-        amount += getCommission(amount) * amount;
+        System.out.println("Withdraw " + amount + currency.toString());
+        System.out.println("Commission is: " + getCommission(amount) + "%");
+        amount += (int) (getCommission(amount) * amount / 100.0);
 
         if (user.getBalance() - amount < 0) {
             System.out.println("Withdraw is unable: not enough of founds.");
@@ -71,26 +73,35 @@ public class ChinaBank extends Bank {
         }
 
         user.setBalance(user.getBalance() - amount);
+        System.out.println("Your balance was changed.\n");
 
     }
 
     @Override
     public void fundUser(User user, int amount) {
 
+        System.out.println("Founding " + amount + currency.toString() + " to " + user.getName());
         if (getLimitOfFunding() > 0 && amount > getLimitOfFunding()) {
             System.out.println("Founding is unable: trying to found more then Bank limit.");
             return;
         }
 
         user.setBalance(user.getBalance() + amount);
+        System.out.println("Your balance was changed.\n");
 
     }
 
     @Override
     public void transferMoney(User fromUser, User toUser, int amount) {
 
+        if (fromUser.equals(toUser)) {
+            System.out.println("You trying transfer money to yourself.\nSuch transferring is imposible.");
+            return;
+        }
+
         double toUserCurrentBalance = toUser.getBalance(), fromUserCurrentBalance = fromUser.getBalance();
 
+        System.out.println("Transferring the money...");
         fundUser(toUser, amount);
         withdrawOfUser(fromUser, amount);
 
@@ -101,13 +112,18 @@ public class ChinaBank extends Bank {
             fromUser.setBalance(fromUserCurrentBalance);
         }
 
+        System.out.println("Success. Both balances was changed.\n");
+
     }
 
     @Override
     public void paySalary(User user) {
 
-        double amount = user.getSalary();
+        int amount = user.getSalary();
+        System.out.println("Earn you salary. Amount: " + amount + currency.toString());
         user.setBalance(user.getBalance() + amount);
+        System.out.println("Your balance was changed.\n");
 
     }
+
 }

@@ -17,11 +17,16 @@ public class Main {
         User user5 = new User("Kolya", 1005, 8, "GoIT", 1050, bank3);
         User user6 = new User("Lilya", 1006, 9, "GoIT", 1060, bank3);
 
-        // TODO
-        // unfinished
         System.out.println(user1);
         bank1.withdrawOfUser(user1, 500);
         System.out.println(user1);
+        bank1.paySalary(user1);
+        System.out.println(user1);
+        bank1.fundUser(user1, 222);
+        System.out.println(user1);
+        bank1.transferMoney(user2, user1, 100);
+        System.out.println(user1);
+        System.out.println(user2);
 //        System.out.println(user2);
 //        System.out.println(user3);
 //        System.out.println(user4);
