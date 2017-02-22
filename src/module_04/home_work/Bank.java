@@ -3,7 +3,7 @@ package module_04.home_work;
 /**
  * Created by voksus on 19.02.2017.
  */
-public abstract class Bank {
+public abstract class Bank implements BankSystem {
 
     private long id;
     private String bankCountry;
