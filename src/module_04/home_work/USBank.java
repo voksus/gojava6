@@ -58,24 +58,22 @@ public class USBank extends Bank {
     @Override
     public void withdrawOfUser(User user, int amount) {
 
-        System.out.println("1");
         if (getLimitOfWithdrawal() > 0 && amount > getLimitOfWithdrawal()) {
             System.out.println("Withdraw is unable: request amount is out of Bank limit.");
             return;
         }
 
-        System.out.println("2");
-        amount += getCommission(amount) * amount;
-        System.out.println("3" + amount);
+        System.out.println("Withdraw " + amount + currency.toString());
+        System.out.println("Commission is: " + getCommission(amount) + "%");
+        amount += (int) (getCommission(amount) * amount / 100.0);
 
         if (user.getBalance() - amount < 0) {
             System.out.println("Withdraw is unable: not enough of founds.");
             return;
         }
 
-        System.out.println("Withdraw " + amount + currency.toString());
         user.setBalance(user.getBalance() - amount);
-        System.out.println("Your balance was changed.");
+        System.out.println("Your balance was changed.\n");
 
     }
 
@@ -115,4 +113,5 @@ public class USBank extends Bank {
         user.setBalance(user.getBalance() + amount);
 
     }
+
 }
