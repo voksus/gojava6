@@ -3,7 +3,7 @@ package module_04.home_work;
 /**
  * Created by voksus on 19.02.2017.
  */
-public abstract class Bank implements BankSystem {
+public abstract class Bank implements BankSystem{
 
     private long id;
     private String bankCountry;
@@ -21,7 +21,7 @@ public abstract class Bank implements BankSystem {
 
     abstract int getCommission(int summ);
 
-    double moneyPaidMonthlyForSalary() {
+    double moneyPaidMonthlyForSalary() { // не пойму что должен делать этот метод
 
         return 0;
     }

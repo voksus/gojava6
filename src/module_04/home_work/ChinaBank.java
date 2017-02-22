@@ -5,7 +5,7 @@ package module_04.home_work;
  */
 public class ChinaBank extends Bank {
 
-    Currency currency;
+    Currency currency = Currency.USD;
 
     @Override
     int getLimitOfWithdrawal() {

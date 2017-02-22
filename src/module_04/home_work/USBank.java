@@ -5,7 +5,7 @@ package module_04.home_work;
  */
 public class USBank extends Bank {
 
-    Currency currency;
+    Currency currency = Currency.USD;
 
     @Override
     int getLimitOfWithdrawal() {
@@ -58,19 +58,24 @@ public class USBank extends Bank {
     @Override
     public void withdrawOfUser(User user, int amount) {
 
+        System.out.println("1");
         if (getLimitOfWithdrawal() > 0 && amount > getLimitOfWithdrawal()) {
             System.out.println("Withdraw is unable: request amount is out of Bank limit.");
             return;
         }
 
+        System.out.println("2");
         amount += getCommission(amount) * amount;
+        System.out.println("3" + amount);
 
         if (user.getBalance() - amount < 0) {
             System.out.println("Withdraw is unable: not enough of founds.");
             return;
         }
 
+        System.out.println("Withdraw " + amount + currency.toString());
         user.setBalance(user.getBalance() - amount);
+        System.out.println("Your balance was changed.");
 
     }
 
