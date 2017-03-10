@@ -5,6 +5,6 @@ package module_06.home_work.citizen;
  */
 public interface Citizen {
 
-    sayHello();
+    void sayHello();
 
 }

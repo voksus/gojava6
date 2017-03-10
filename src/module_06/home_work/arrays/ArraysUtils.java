@@ -1,4 +1,4 @@
-package module_06.home_work.array_of_users;
+package module_06.home_work.arrays;
 
 import java.util.Arrays;
 
@@ -87,6 +87,7 @@ public final class ArraysUtils {
                 result[i++] = value;
             }
         }
+
         result = Arrays.copyOf(result, i);
         return result;
     }
