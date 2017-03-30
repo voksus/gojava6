@@ -18,13 +18,13 @@ public class Main {
         User user6 = new User("Lilya", 1006, 9, "GoIT", 1060, bank3);
 
         System.out.println(user1);
-        bank1.withdrawOfUser(user1, 500);
-        System.out.println(user1);
-        bank1.paySalary(user1);
-        System.out.println(user1);
-        bank1.fundUser(user1, 222);
-        System.out.println(user1);
-        bank1.transferMoney(user2, user1, 100);
+//        bank1.withdrawOfUser(user1, 500);
+//        System.out.println(user1);
+//        bank1.paySalary(user1);
+//        System.out.println(user1);
+//        bank1.fundUser(user1, 222);
+//        System.out.println(user1);
+//        bank1.transferMoney(user2, user1, 100);
         System.out.println(user1);
         System.out.println(user2);
 //        System.out.println(user2);

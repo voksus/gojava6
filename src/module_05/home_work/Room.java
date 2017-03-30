@@ -3,7 +3,7 @@ package module_05.home_work;
 import java.util.Date;
 
 /**
- * Created by voksu on 02.03.2017.
+ * Created by voksus on 02.03.2017.
  */
 public class Room {
 
@@ -13,6 +13,15 @@ public class Room {
     private Date dateAvailableFrom;
     private String hotelName;
     private String cityName;
+
+    public Room(long id, int price, int persons, Date dateAvailableFrom, String hotelName, String cityName) {
+        this.id = id;
+        this.price = price;
+        this.persons = persons;
+        this.dateAvailableFrom = dateAvailableFrom;
+        this.hotelName = hotelName;
+        this.cityName = cityName;
+    }
 
     public long getId() {
         return id;
@@ -63,12 +72,23 @@ public class Room {
     }
 
     @Override
-    public int hashCode() {
-        return super.hashCode();
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Room room = (Room) o;
+
+        if (price != room.price) return false;
+        if (persons != room.persons) return false;
+        return cityName != null ? cityName.equals(room.cityName) : room.cityName == null;
     }
 
     @Override
-    public boolean equals(Object obj) {
-        return super.equals(obj);
+    public int hashCode() {
+        int result = price;
+        result = 31 * result + persons;
+        result = 31 * result + (cityName != null ? cityName.hashCode() : 0);
+        return result;
     }
+
 }

@@ -3,7 +3,7 @@ package module_04.home_work;
 /**
  * Created by voksus on 19.02.2017.
  */
-public abstract class Bank implements BankSystem{
+public abstract class Bank {
 
     private long id;
     private String bankCountry;
@@ -12,6 +12,8 @@ public abstract class Bank implements BankSystem{
     private double avrSalaryOfEmployee;
     private long rating;
     private long totalCapital;
+    private int limitOfWithdrawalUSD;
+    private int limitOfWithdrawalEUR;
 
     abstract int getLimitOfWithdrawal();
 
@@ -82,4 +84,11 @@ public abstract class Bank implements BankSystem{
         this.totalCapital = totalCapital;
     }
 
+    public int setLimitOfWithdrawalUSD(int limit) {
+        return limitOfWithdrawalUSD;
+    }
+
+    public int setLimitOfWithdrawalEUR(int limit) {
+        return limitOfWithdrawalEUR;
+    }
 }
