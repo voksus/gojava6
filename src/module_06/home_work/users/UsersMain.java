@@ -21,13 +21,15 @@ public class UsersMain {
         System.out.println(Arrays.deepToString(users));
         users = UserUtils.deleteEmptyUsers(users);
         System.out.println(Arrays.deepToString(users));
+        users = UserUtils.uniqueUsers(users);
+        System.out.println(Arrays.deepToString(users));
 
         System.out.println(Arrays.toString(UserUtils.getUsersId(users)));
 
-        System.out.println(user1.toStringDetailed());
-        System.out.println(user10.toStringDetailed());
+        System.out.println(users[0].toStringDetailed());
+        System.out.println(users[4].toStringDetailed());
         UserUtils.paySalaryToUsers(users);
-        System.out.println(user1.toStringDetailed());
-        System.out.println(user10.toStringDetailed());
+        System.out.println(users[0].toStringDetailed());
+        System.out.println(users[4].toStringDetailed());
     }
 }

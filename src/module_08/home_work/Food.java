@@ -60,4 +60,13 @@ public class Food {
         return getId();
     }
 
+    @Override
+    public String toString() {
+        return "Food{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", country=" + country +
+                ", expiration=" + expiration +
+                '}';
+    }
 }

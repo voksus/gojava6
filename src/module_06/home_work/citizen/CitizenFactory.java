@@ -9,25 +9,6 @@ import java.util.Random;
  */
 public class CitizenFactory {
 
-    static Random rnd = new Random();
-    private static List<Citizen> citizens = new ArrayList<>();
-
-    public static void generateCitizen() {
-        switch (rnd.nextInt(4)) {
-            case 0:
-                citizens.add(createEnglishman());
-                break;
-            case 1:
-                citizens.add(createChinese());
-                break;
-            case 2:
-                citizens.add(createRussian());
-                break;
-            case 3:
-                citizens.add(createItalian());
-        }
-    }
-
     static public Citizen createEnglishman() {
         return new Englishman();
     }
@@ -92,15 +73,4 @@ public class CitizenFactory {
         }
     }
 
-    public static void showCitizens() {
-        for(Citizen citizen : citizens) {
-            System.out.println(citizen);
-        }
-    }
-
-    public static void citizenTalking() {
-        for(Citizen citizen : citizens) {
-            citizen.sayHello();
-        }
-    }
 }
