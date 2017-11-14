@@ -5,10 +5,10 @@ package module_06.home_work.users;
  */
 public final class User {
 
-    private long id;
-    private String firstName, lastName;
-    private int salary;
-    private int balance;
+    private final long id;
+    private final String firstName, lastName;
+    private final int salary;
+    private final int balance;
 
     public User(long id, String firstName, String lastName, int salary, int balance) {
         this.id = id;
