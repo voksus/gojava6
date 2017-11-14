@@ -31,10 +31,7 @@ public class CitizenMain {
         }
 
         for(Citizen citizen : citizens) {
-            System.out.println(citizen);
-        }
-
-        for(Citizen citizen : citizens) {
+            System.out.print("New citizen " + citizen + " saying ");
             citizen.sayHello();
         }
 

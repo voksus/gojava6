@@ -9,19 +9,19 @@ import java.util.Random;
  */
 public class CitizenFactory {
 
-    static public Citizen createEnglishman() {
+    public static Citizen createEnglishman() {
         return new Englishman();
     }
 
-    static public Citizen createChinese() {
+    public static Citizen createChinese() {
         return new Chinese();
     }
 
-    static public Citizen createRussian() {
+    public static Citizen createRussian() {
         return new Russian();
     }
 
-    static public Citizen createItalian() {
+    public static Citizen createItalian() {
         return new Italian();
     }
 
