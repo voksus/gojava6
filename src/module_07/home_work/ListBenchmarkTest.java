@@ -164,7 +164,7 @@ public class ListBenchmarkTest {
         System.out.println("\t\tLinkedList = " + (finish - start) + " nanos");
         System.out.println();
 
-        // Set to 10000
+// Set to 10000
         System.out.println("Using method SET to Lists with 10'000 elements:");
         System.out.println("Integer:");
         start = System.nanoTime();
