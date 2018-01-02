@@ -1,25 +1,34 @@
 package my_tasks.palindrome;
 
+import java.util.Locale;
+
 /**
  * @author Volodymyr Burtsev at 29.12.2017 16:59
  */
 public class MaxPalindromeSearch {
 
+    private static Locale l = Locale.ENGLISH;
     private static long timer;                                  // to check used time
     private static boolean showMoreInformation = false;         // to show additional info
-    private static boolean showTotalPalindromesCount = false;    // to count all possible palindromes
+    private static boolean showTotalPalindromesCount = true;    // to count all possible palindromes
 
     public static void main(String[] args) {
 
+        System.out.printf(l, "%n%,d ", Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory());
+        System.out.println("bytes of memory used when program started.\n");
         int[] primeNumbers = getPrimeNumbers(10_000, 99_999);
 
         findBiggestPalindrome(primeNumbers);
+
+        Runtime.getRuntime().gc();
+
+        System.out.printf(l, "%n%nProgram used %,d bytes of memory with array of prime numbers%n%n", Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory());
 
     }
 
     private static int[] getPrimeNumbers(int minNumber, int maxNumber) {
         if (minNumber < 2 || minNumber > maxNumber) throw new RuntimeException("Wrong range numbers. You can use range from 2 to Integer.MAX_VALUE");
-        System.out.println("\nSearching all prime numbers in range " + minNumber + ".." + maxNumber);
+        System.out.printf(l, "%nSearching all prime numbers in range [%,d..%,d]%n", minNumber, maxNumber);
         System.out.print("Time used to search all prime numbers: ");
 
         timerStart();
@@ -55,7 +64,7 @@ public class MaxPalindromeSearch {
             }
         }
         timerStop();
-        System.out.println("\nTotal " + primeNumbers.length + " prime numbers found.\n--------");
+        System.out.printf(l, "%nTotal %,d prime numbers found.%n%n", primeNumbers.length);
         return result;
     }
 
@@ -68,8 +77,8 @@ public class MaxPalindromeSearch {
         int multiplier1 = 0;
         int multiplier2 = 0;
 
-        System.out.println("\nSearching palindromes in selected range...");
-        if (showMoreInformation) System.out.println("Palindromes found:");
+        if (!showMoreInformation) System.out.println("\nSearching palindromes in selected range...");
+        if (showMoreInformation) System.out.println("\n\nPalindromes list:");
         boolean palindromeFound;
         for (int i = primeNumbersInRange.length - 1; i >= 0; i--) {
             for (int j = i; j >= 0; j--) {
@@ -79,8 +88,7 @@ public class MaxPalindromeSearch {
                 palindromeFound = isPalindrome(numberToCheck);
                 if (palindromeFound) {
                     palindromesCount++;
-                    if (showMoreInformation) System.out.println("  " + palindromesCount + ") \t" + n1 + " x " + n2
-                            + " = " + numberToCheck + "\t\t");
+                    if (showMoreInformation) System.out.printf(l, "%5d)  %,d  x  %,d  =  %,d%n", palindromesCount, n1, n2, numberToCheck);
                     if (numberToCheck > palindrome) {
                         palindrome = numberToCheck;
                         multiplier1 = primeNumbersInRange[i];
@@ -94,10 +102,8 @@ public class MaxPalindromeSearch {
         }
         System.out.print("Time used for searching all palindromes: ");
         timerStop();
-        if (showTotalPalindromesCount) System.out.println("Total palindromes found: " + palindromesCount);
-        System.out.println("--------\n\n\nFinally biggest palindrom is:\n\t" + palindrome +
-                "\nwhich taken by multiplying the prime numbers from range:\n\t" +
-                multiplier1 + " and " + multiplier2 + "\n");
+        if (showTotalPalindromesCount) System.out.printf(l, "%nTotal palindromes found: %,d", palindromesCount);
+        System.out.printf(l, "%n%n%n%nFinally biggest palindrom is:%n%,16d%nIt was taken by multiplying the prime numbers:%n%,11d and %,d%n%n", palindrome, multiplier1, multiplier2);
     }
 
     private static boolean isPalindrome(long numberToCheck) {
@@ -115,7 +121,7 @@ public class MaxPalindromeSearch {
     }
 
     private static void timerStop() {
-        System.out.println((System.currentTimeMillis() - timer) + "ms");
+        System.out.printf(l, "%,dms", (System.currentTimeMillis() - timer));
     }
 
 }
