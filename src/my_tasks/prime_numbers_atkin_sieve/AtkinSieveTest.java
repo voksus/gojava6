@@ -29,7 +29,7 @@ public class AtkinSieveTest {
                 }*/
             }
         }
-        System.out.printf(l, "\nTotal prime numbers count : %,d%n", primeNumbersCount);
+        System.out.printf(l, "%nTotal prime numbers count : %,d%n", primeNumbersCount);
         System.out.printf(l, "Time to prepare prime numbers in range [2..%,d] is: ", upperLimit);
         timerStop();
 

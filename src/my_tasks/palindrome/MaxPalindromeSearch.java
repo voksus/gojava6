@@ -64,7 +64,7 @@ public class MaxPalindromeSearch {
             }
         }
         timerStop();
-        System.out.printf(l, "%nTotal %,d prime numbers found.%n%n", primeNumbers.length);
+        System.out.printf(l, "%nTotal %,d prime numbers found.%n%n", result.length);
         return result;
     }
 
